@@ -20,8 +20,6 @@ const Collection = ({ items = [] }) => {
         return false;
     });
 
-    console.log(items);
-
     const addToRefs = (el) => {
         if (el && !itemsRef.current.includes(el)) itemsRef.current.push(el);
     };
