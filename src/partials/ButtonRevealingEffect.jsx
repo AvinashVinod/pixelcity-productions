@@ -17,13 +17,13 @@ const ButtonRevealingEffect = ({ text, className, padding, idx }) => {
         >
           {text}
         </h2>
-        <span className="absolute top-[-2.8vw] sm:top-[-0.87rem] lg:top-[-0.57rem] xl:top-[-0.91rem] right-[-6%] z-20 text-[1.2rem] text-black group-active:text-white group-hover:text-white transition-all duration-300 whitespace-nowrap">
+        <span className="absolute top-[-2.8vw] sm:top-[-0.87rem] lg:top-[-0.57rem] xl:top-[-0.91rem] right-[-6%] z-20 text-[1.2rem] text-black group-active:text-red-500 group-hover:text-red-500 transition-all duration-300 whitespace-nowrap">
           {idx}
         </span>
       </div>
       <h2
         ref={textRef2}
-        className={`absolute ${idx ? 'bg-black' : 'small-para'} text-white w-full transition-all duration-300 translate-y-full group-active:translate-y-0 group-hover:translate-y-0 top-0 left-0 ${padding}`}
+        className={`absolute ${idx ? 'bg-black' : 'small-para'} text-red-500 w-full transition-all duration-300 translate-y-full group-active:translate-y-0 group-hover:translate-y-0 top-0 left-0 ${padding}`}
       >
         {text}
         {/* <span className="text-[1.2rem] text-white ml-1">{idx}</span> */}
