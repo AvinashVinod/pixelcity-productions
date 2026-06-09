@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* fonts */
+
+@font-face {
+  font-family: "heading";
+  src: url("./assets/fonts/Fantia.woff");
+  font-display: swap;
+}
+
+/* resets */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    /* margin: 0;
+    padding: 0; */
+}
+
+body {
+    user-select: none;
+}
+
+h1 {
+    font-family: "heading", serif;
+    font-size: 3.75rem;
+}
+
+.h2 {
+   font-family: "heading", serif; 
+}
+
+img,
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.small-para {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.small-para--lower {
+    font-size: 13px;
+}
+
+.secondary-para {
+    font-size: 18px;
+}
+
+.secondary-heading {
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+}
+
+.text-box-trim {
+    text-box: trim-both cap alphabetic;
+}
+
+.max-width {
+    padding: 7rem 1rem;
+}
+
+/* h1 span {
+    color: #CFA86D;
+    font-style: italic;
+} */
+
+/* partial css */
+
+.link-revealing {
+    position: relative;
+}
+
+.link-revealing::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.link-revealing:hover::after {
+    background-color: #CFA86D;
+}
+
+
+/* 1. Remove the upper section / header scanner container */
+.taggbox .tg-header-container, 
+.taggbox [class*="header"] {
+    display: none !important;
+}
+
+/* 2. Strip out the bottom "Powered by Social Walls / Taggbox" watermark badge */
+.taggbox-fluid-branding,
+.tg-branding,
+div[class*="branding"],
+.taggbox + div,
+div[style*="z-index: 9999"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    pointer-events: none !important;
+}   
+
+/* media queries */
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 8vw;
+        line-height: 7vw;
+    }
+
+    .max-width {
+        max-width: 1280px;
+        padding: 7rem 0;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .max-width {
+        padding: 7rem 2rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .margin-top--custom {
+        margin-top: 15rem;
+    }
+}
