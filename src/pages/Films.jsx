@@ -59,7 +59,6 @@ const Films = () => {
           if (cleanData.weddingFilms) setWeddingFilms(cleanData.weddingFilms)
         }
         setLoading(false)
-        console.log("Sanity Films Data Successfully Parsed:", cleanData);
       })
       .catch((err) => {
         console.error("Sanity data fetch error:", err)

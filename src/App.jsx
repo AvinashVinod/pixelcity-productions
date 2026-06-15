@@ -177,7 +177,7 @@ const App = () => {
   }, [pathname]);
 
   return (
-    <div className="h-full w-full min-h-dvh bg-[#E3E2DD] overflow-hidden">
+    <div className="h-full w-full min-h-dvh overflow-hidden">
       <Navbar
         introKey={pathname === "/" ? key : "static"}
         isHomeRoute={pathname === "/"}

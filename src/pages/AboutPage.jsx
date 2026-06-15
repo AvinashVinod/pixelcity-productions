@@ -38,7 +38,6 @@ const AboutPage = () => {
             .then((data) => {
                 const cleanData = Array.isArray(data) ? data[0] : data;
                 setAbout(cleanData);
-                console.log("Sanity Data Successfully Parsed:", cleanData);
             })
             .catch((err) => {
                 setError(err);

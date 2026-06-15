@@ -172,9 +172,7 @@ const Preloader = ({ onLoadingComplete }) => {
     
     const { columns, rows } = gridConfig
     const logoPos = getLogoPosition()
-    
-    console.log(`Width: ${windowWidth}px, Grid: ${columns}x${rows}, Logo at: row ${logoPos.row}, col ${logoPos.col}`)
-    
+        
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < columns; col++) {
         const isLogoArea = row >= logoPos.row && row < logoPos.row + 2 && 

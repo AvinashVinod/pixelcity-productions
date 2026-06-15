@@ -2,8 +2,6 @@ import React from 'react'
 import LineRevealingEffect from '../partials/LineRevealingEffect'
 
 const WhyUs = ({ description }) => {
-
-  console.log("description", description);
   
   return (
     <div className='grid place-items-center h-fit w-full bg-white'>

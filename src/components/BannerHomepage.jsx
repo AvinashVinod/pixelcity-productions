@@ -16,8 +16,6 @@ const BannerHomepage = ({ mainImage }) => {
   const [currentImage, setCurrentImage] = useState(FALLBACK_IMAGE); // Start with fallback
   const [currentAlt, setCurrentAlt] = useState("Wedding Background");
 
-  console.log("bannerImage:", mainImage)
-
   // Handle responsive image selection based on screen size
   useEffect(() => {
     const updateImage = () => {

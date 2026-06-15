@@ -37,9 +37,7 @@ const TestimonialsPage = () => {
           featured
         }`,
       )
-      .then((data) => {
-        console.log("All Sanity Testimonials:", data);
-        
+      .then((data) => {        
         if (data && data.length > 0) {
           setTestimonials(data);
         }

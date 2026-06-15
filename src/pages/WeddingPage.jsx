@@ -31,7 +31,6 @@ const WeddingPage = () => {
         }`,
       )
       .then((data) => {
-        console.log("All Sanity Weddings:", data);
         setWeddingData(data);
         
         if (data && data.length > 0) {

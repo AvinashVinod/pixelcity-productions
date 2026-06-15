@@ -90,7 +90,6 @@ const Monochrome = () => {
         }`,
       )
       .then((data) => {
-        console.log("Monochrome Gallery Data:", data);
         
         if (data) {
           setPreWeddingImages(data.preWeddingImages || []);
