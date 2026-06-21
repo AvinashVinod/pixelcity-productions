@@ -188,32 +188,30 @@ const TestimonialsPage = () => {
       <div className="flex flex-col gap-10 max-width mx-auto">
         <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between">
           <h1 className="basis-[80%] mb-15 md:mb-6 leading-none text-center md:text-left">Trusted by Happy Couples</h1>
-          <div className="relative basis-[20%] grow aspect-square h-70 w-70 md:h-60 md:w-60">
-            <div className="relative h-full w-full z-1 rotate-12 rounded-lg overflow-hidden">
-              <img 
-                ref={coupleImageRef}
-                src={optimizedImageUrl} 
-                alt={currentTestimonial.imageAlt || "Happy couple"} 
-                className="h-full w-full object-cover"
-                loading="eager"
-              />
-            </div>
-            <div className="absolute inset-0 bg-black -rotate-6 rounded-lg overflow-hidden h-70 w-70 md:h-60 md:w-60">
-              <img src="/images/bg.jpg" alt="testimonials-bg-img" />
-            </div>
-            {/* paperclip svg */}
-            <div className="absolute z-10 rotate-12"
-              style={{ 
-    height: '100px', 
-    width: 'auto',
-    inset: '-22px 0px auto auto'
-  }}
-            >
-              <svg width="100%" height="100%" viewBox="0 0 169 504" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 200.509C7 200.509 7 102.974 7 72.3002C7 41.6266 49.3717 7 85 7C130.808 6.99968 160.084 42.6606 161.259 72.3002C162.433 101.94 162.042 408.676 161.259 440.383C160.476 472.091 124.364 496.5 95 496.5C61.3293 496.5 26.576 468.989 26.576 440.383C26.576 411.777 26.576 128.646 26.576 128.646" stroke="#B79728" stroke-width="14" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
+          <div className="relative basis-[20%] grow aspect-square h-70 w-70 md:h-60 md:w-60 flex items-start justify-end">
+  {/* Main image */}
+  <div className="relative h-full w-full z-1 rotate-12 rounded-lg overflow-hidden">
+    <img 
+      ref={coupleImageRef}
+      src={optimizedImageUrl} 
+      alt={currentTestimonial.imageAlt || "Happy couple"} 
+      className="h-full w-full object-cover"
+      loading="eager"
+    />
+  </div>
+  
+  {/* Background image */}
+  <div className="absolute inset-0 bg-black -rotate-6 rounded-lg overflow-hidden h-70 w-70 md:h-60 md:w-60">
+    <img src="/images/bg.jpg" alt="testimonials-bg-img" />
+  </div>
+  
+  {/* Paperclip using flex positioning */}
+  <div className="z-10 h-25 rotate-12 -mt-4 -mr-4">
+    <svg width="100%" height="100%" viewBox="0 0 169 504" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 200.509C7 200.509 7 102.974 7 72.3002C7 41.6266 49.3717 7 85 7C130.808 6.99968 160.084 42.6606 161.259 72.3002C162.433 101.94 162.042 408.676 161.259 440.383C160.476 472.091 124.364 496.5 95 496.5C61.3293 496.5 26.576 468.989 26.576 440.383C26.576 411.777 26.576 128.646 26.576 128.646" stroke="#B79728" stroke-width="14" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
         </div>
         <div className="md:flex gap-10">
           <div className="md:basis-[20%] flex flex-col items-end">
