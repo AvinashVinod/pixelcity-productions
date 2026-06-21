@@ -225,7 +225,7 @@ const WeddingDetailPage = () => {
             <h1 className="leading-none [word-spacing:-20px]">
               {detail.coupleName}
             </h1>
-            <p className="w-[70%] opacity-70 md:max-h-[200px] overflow-y-scroll custom-scrollbar">
+            <p className="md:w-[70%] opacity-70 md:max-h-[200px] overflow-y-scroll custom-scrollbar">
               {detail.description ||
                 "Experience a premium visual narrative where every frame is crafted to perfection, showcasing the elegance and raw emotion of a cinematic journey."}
             </p>
