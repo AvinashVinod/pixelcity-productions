@@ -202,7 +202,7 @@ const TestimonialsPage = () => {
               <img src="/images/bg.jpg" alt="testimonials-bg-img" />
             </div>
             {/* paperclip svg */}
-            <div className="absolute z-10 h-25 right-10 top-5.5 rotate-12">
+            <div className="absolute z-10 h-25 right-0 bottom-40.5 rotate-14">
               <svg width="100%" height="100%" viewBox="0 0 169 504" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 200.509C7 200.509 7 102.974 7 72.3002C7 41.6266 49.3717 7 85 7C130.808 6.99968 160.084 42.6606 161.259 72.3002C162.433 101.94 162.042 408.676 161.259 440.383C160.476 472.091 124.364 496.5 95 496.5C61.3293 496.5 26.576 468.989 26.576 440.383C26.576 411.777 26.576 128.646 26.576 128.646" stroke="#B79728" stroke-width="14" stroke-linecap="round"/>
               </svg>
