@@ -144,6 +144,19 @@ div[style*="z-index: 9999"] {
     pointer-events: none !important;
 }   
 
+.cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: url(#Degradado_sin_nombre_13);
+      }
+
 /* media queries */
 
 @media screen and (min-width: 768px) {

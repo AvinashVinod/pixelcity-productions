@@ -8,8 +8,17 @@ import ButtonRevealingEffect from "./ButtonRevealingEffect";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { TfiYoutube } from "react-icons/tfi";
+import Whatsapp from "../../public/Whatsapp";
 
-const Navbar = ({ introKey = "static", isHomeRoute = false }) => {
+// How long after the banner starts sliding up the navbar drops in.
+// The banner's expo.out slide is visually settled by ~0.4s, so this lands right as it appears.
+const NAVBAR_DELAY_AFTER_BANNER = 0.4;
+
+/**
+ * @param playIntro   true only during the first-load homepage intro (preloader → banner → navbar)
+ * @param introReady  true once the banner has started revealing
+ */
+const Navbar = ({ playIntro = false, introReady = true }) => {
   const { pathname } = useLocation();
   const navbarRef = useRef(null);
   const layer1Ref = useRef(null);
@@ -67,25 +76,39 @@ const Navbar = ({ introKey = "static", isHomeRoute = false }) => {
   // Initial entrance animation for the Navbar
   useGSAP(
     () => {
-      if (!navbarRef.current) return;
+      const nav = navbarRef.current;
+      if (!nav) return;
 
-      gsap.killTweensOf(navbarRef.current);
+      gsap.killTweensOf(nav);
 
-      if (!isHomeRoute) {
-        gsap.set(navbarRef.current, { opacity: 1, y: 0 });
+      // No intro (other pages, or homepage reached by in-app navigation):
+      // navbar is simply visible — it never disappears between pages.
+      if (!playIntro) {
+        gsap.set(nav, { autoAlpha: 1, y: 0 });
         return;
       }
 
-      gsap.set(navbarRef.current, { opacity: 0, y: "-100px" });
-      gsap.to(navbarRef.current, {
-        opacity: 1,
-        y: 0,
-        delay: 5.6,
-        duration: 0.9,
-        ease: "ease.out",
-      });
+      // First-load intro, images still loading: keep it hidden.
+      // autoAlpha also sets visibility:hidden, so the invisible Menu button can't be clicked.
+      if (!introReady) {
+        gsap.set(nav, { autoAlpha: 0, y: -100 });
+        return;
+      }
+
+      // Banner is revealing: drop the navbar in right behind it
+      gsap.fromTo(
+        nav,
+        { autoAlpha: 0, y: -100 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          delay: NAVBAR_DELAY_AFTER_BANNER,
+          duration: 0.9,
+          ease: "power3.out",
+        },
+      );
     },
-    { scope: navbarRef, dependencies: [introKey, isHomeRoute] },
+    { scope: navbarRef, dependencies: [playIntro, introReady] },
   );
 
   // Premium GSAP animation for layered divs
@@ -161,6 +184,15 @@ const Navbar = ({ introKey = "static", isHomeRoute = false }) => {
       ref={navbarRef}
       className={`fixed inset-0 z-100 w-full text-white ${isRotated ? "pointer-events-auto" : "pointer-events-none"}`}
     >
+      <a
+        href="https://wa.me/919636605257"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        className="fixed h-12 w-12 z-99999 right-[1rem] sm:right-[2rem] bottom-[1rem] sm:bottom-[2rem] cursor-pointer pointer-events-auto"
+      >
+        <Whatsapp />
+      </a>
       {/* Premium Layered Divs with GSAP animations */}
       <div 
         className={`fixed z-1 h-full w-full bg-black transition-opacity duration-300 ${isRotated ? "opacity-70 pointer-events-auto" : "opacity-0 pointer-events-none"}`}

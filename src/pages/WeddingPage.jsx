@@ -49,7 +49,7 @@ const WeddingPage = () => {
   useEffect(() => {
     // PRELOADER CARDS: Fixed at 18 images
     const preloaderCount = 18;
-    const preloaderPaths = Array.from({ length: preloaderCount }, (_, i) => `/images/preloader/wedding-${i + 1}.jpg`);
+    const preloaderPaths = Array.from({ length: preloaderCount }, (_, i) => `/images/wedPreloader/couple-${i + 1}.jpg`);
     setPreloaderImages(preloaderPaths);
   }, []);
 

@@ -141,7 +141,7 @@ const Collection = ({ items = [] }) => {
 
     return (
         <div className='grid place-items-center h-full w-full bg-[#E3E2DD]'>
-            <div className="max-width w-full text-center px-4">
+            <div className="max-width w-full sm:text-center px-4">
                 <p className='small-para font-semibold mb-10'>the Collection</p>
 
                 <LineRevealingEffect
